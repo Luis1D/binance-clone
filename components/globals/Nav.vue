@@ -7,23 +7,13 @@
         </nuxt-link>
       </li>
       <li class="footer__home-link">
-        <nuxt-link to="/">
+        <nuxt-link to="/explore">
           <img src="../../assets/images/bar-graph.png" alt="Coins"/>
         </nuxt-link>
       </li>
       <li class="footer__home-link">
         <nuxt-link to="/wallet">
           <img src="../../assets/images/wallet.png" alt="Wallet"/>
-        </nuxt-link>
-      </li>
-      <li class="footer__home-link">
-        <nuxt-link to="/">
-          <img src="../../assets/images/script.png" alt="History"/>
-        </nuxt-link>
-      </li>
-      <li class="footer__home-link">
-        <nuxt-link to="/">
-          <img src="../../assets/images/user.png" alt="Profile"/>
         </nuxt-link>
       </li>
     </ul>

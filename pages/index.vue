@@ -1,29 +1,22 @@
 <template>
   <div class="view">
     <PortfolioCard />
-    <button @click="getData()">click</button>
-    {{ coinData }}
+    <TopMovers />
+    <Favorites />
   </div>
 </template>
 
 <script>
 import PortfolioCard from '../components/portfolio/PortfolioCard.vue';
-import { mapState, mapActions } from 'vuex';
+import TopMovers from '../components/exchage/TopMovers.vue';
+import Favorites from '../components/exchage/Favorites.vue';
 
 export default {
   name: 'IndexPage',
   components: {
     PortfolioCard,
-  },
-  computed: {
-    ...mapState([
-      'coinData',
-    ]),
-  },
-  methods: {
-    ...mapActions({
-      getData: 'getCoinData'
-    }),
+    TopMovers,
+    Favorites,
   },
 };
 </script>
