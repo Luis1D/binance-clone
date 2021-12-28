@@ -1,19 +1,19 @@
 <template>
-  <nav class="footer">
-    <ul class="footer__ul">
-      <li class="footer__home-link">
+  <nav class="nav">
+    <ul class="nav__ul">
+      <li class="nav__home-link">
         <nuxt-link to="/">
-          <img src="../../assets/images/home.png" alt="Home"/>
+          <img class="nav__icon" src="../../assets/images/home.png" alt="Home"/>
         </nuxt-link>
       </li>
-      <li class="footer__home-link">
+      <li class="nav__home-link">
         <nuxt-link to="/explore">
-          <img src="../../assets/images/bar-graph.png" alt="Coins"/>
+          <img class="nav__icon" src="../../assets/images/bar-graph.png" alt="Coins"/>
         </nuxt-link>
       </li>
-      <li class="footer__home-link">
+      <li class="nav__home-link">
         <nuxt-link to="/wallet">
-          <img src="../../assets/images/wallet.png" alt="Wallet"/>
+          <img class="nav__icon" src="../../assets/images/wallet.png" alt="Wallet"/>
         </nuxt-link>
       </li>
     </ul>
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
-.footer {
+.nav {
   background-color: $Midnight;
   padding: .75rem;
   position: fixed;
@@ -49,9 +49,9 @@ export default {
   &__home-link {
     list-style: none;
     color: $Grey;
-    img {
-      width: 1.75rem;
-    }
+  }
+  &__icon {
+    width: 1.75rem;
   }
 }
 </style>

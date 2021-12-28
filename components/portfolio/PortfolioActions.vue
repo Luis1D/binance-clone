@@ -1,12 +1,12 @@
 <template>
   <div class="portfolio-action">
     <div class="portfolio-action__button">
-      <img src="../../assets/images/qr-code.png" alt="Deposit"/>
-      <span>Deposit</span>
+      <img class="portfolio-action__icon" src="../../assets/images/qr-code.png" alt="Deposit"/>
+      <p class="portfolio-action__label">Deposit</p>
     </div>
     <div class="portfolio-action__button">
-      <img src="../../assets/images/send.png" alt="Send"/>
-      <span>Withdraw</span>
+      <img class="portfolio-action__icon" src="../../assets/images/send.png" alt="Send"/>
+      <p class="portfolio-action__label">Withdraw</p>
     </div>
   </div>
 </template>
@@ -36,10 +36,10 @@ export default {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    img {
-      width: 1rem;
-      margin-right: .35rem;
-    }
+  }
+  &__icon {
+    width: 1rem;
+    margin-right: .35rem;
   }
 }
 </style>

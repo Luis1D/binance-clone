@@ -1,21 +1,24 @@
 <template>
-  <div class="filter-container">
-    <div class="filters">
-      <ul>
-        <li>Favorites</li>
-        <li>USD</li>
-        <li>USDT</li>
-        <li>BTC</li>
+  <div class="explore-filter">
+
+    <div class="explore-filter__macro">
+      <ul class="explore-filter__macro-options">
+        <li class="explore-filter__macro-option">Favorites</li>
+        <li class="explore-filter__macro-option">USD</li>
+        <li class="explore-filter__macro-option">USDT</li>
+        <li class="explore-filter__macro-option">BTC</li>
       </ul>
-      <img src="../../assets/images/search.png" alt="search"/>
+      <img class="explore-filter__search-icon" src="../../assets/images/search.png" alt="search"/>
     </div>
-    <div class="sort-filters">
-      <span>Sort by</span>
-      <button>Name</button>
-      <button>Vol.</button>
-      <button>Price</button>
-      <button>24h Chg</button>
+
+    <div class="explore-filter__micro">
+      <span class="explore-filter__micro-label">Sort by</span>
+      <button class="explore-filter__micro-option">Name</button>
+      <button class="explore-filter__micro-option">Vol.</button>
+      <button class="explore-filter__micro-option">Price</button>
+      <button class="explore-filter__micro-option">24h Chg</button>
     </div>
+
   </div>
 </template>
 
@@ -26,47 +29,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.filter-container {
+.explore-filter {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.filters {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-size: .95rem;
-  background-color: $Black;
-  color: $Grey;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 2;
-  max-width: 30rem;
-  height: 2.5rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-  img {
-    width: 1.5rem;
+  &__macro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .95rem;
+    background-color: $Black;
+    color: $Grey;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    max-width: 30rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
-}
-ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 60%;
-  li {
+  &__macro-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+  }
+  &__macro-option {
     list-style: none;
   }
-}
-.sort-filters {
-  span {
-    margin-right: .5rem;
-    color: $Grey;
+  &__search-icon {
+    width: 1.5rem;
   }
-  button {
+  &__micro-option {
     margin-left: .5rem;
     border-radius: 1rem;
     background-color: $Charcoal;
@@ -74,6 +71,10 @@ ul {
     color: $White;
     padding: .35rem;
     font-size: .8rem;
+  }
+  &__micro-label {
+    margin-right: .5rem;
+    color: $Grey;
   }
 }
 </style>

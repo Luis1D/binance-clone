@@ -19,16 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-color: $Black;
-  color: $White;
-  font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: 1px;
-}
 #view {
   max-width: 30rem;
   margin: 0 auto;

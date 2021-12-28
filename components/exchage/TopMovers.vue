@@ -1,16 +1,16 @@
 <template>
-  <div class="gainers-losers">
-    <span>Top Gainers & Losers</span>
-    <div class="card-container">
+  <div class="top-movers">
+    <span class="top-movers__title">Top Gainers & Losers</span>
+    <div class="top-movers__wrapper">
       <div
-        class="card-container__card"
+        class="coin-card"
         v-for="(coin) in coinData.topMovers"
         :key="coin.USD.FROMSYMBOL">
-        <div class="card-container__chart">
+        <div class="coin-card__chart-container">
           <img
             :src="'https://www.cryptocompare.com' + coin.USD.IMAGEURL"
             alt="coin"
-            class="card-container__img"
+            class="coin-card__img"
           />
           <!--
           <SimpleChart
@@ -20,15 +20,12 @@
             class="chart" />
           -->
         </div>
-        <div>
-          <span class="card-container__from-symbol">{{ coin.USD.FROMSYMBOL }}</span>
-          <span class="card-container__to-symbol">/USD</span><br />
-          <span class="card-container__price">{{ coin.USD.PRICE }}</span><br/>
+        <div class="coin-card__details-container">
+          <span class="coin-card__from-symbol">{{ coin.USD.FROMSYMBOL }}</span>
+          <span class="coin-card__to-symbol">/USD</span><br />
+          <span class="coin-card__price">{{ coin.USD.PRICE }}</span><br/>
         </div>
-        <span
-          class="card-container__price-change"
-          :class="isUp(coin.USD.PRICE, coin.USD.OPEN24HOUR)"
-        >
+        <span :class="isUp(coin.USD.PRICE, coin.USD.OPEN24HOUR)">
           {{ coin.USD.CHANGEPCT24HOUR }}%
         </span>
       </div>
@@ -37,7 +34,6 @@
 </template>
 
 <script>
-// import SimpleChart from '../visuals/SimpleChart.vue';
 import { mapState } from 'vuex';
 
 export default {
@@ -51,9 +47,6 @@ export default {
     ...mapState([
       'coinData',
     ]),
-    test() {
-      return console.log(this.coinData);
-    }
   },
   methods: {
     isUp(price, open) {
@@ -67,41 +60,32 @@ export default {
 </script>
 
 <style lang="scss">
-.gainers-losers {
+.top-movers {
   margin: 0 auto;
   margin-top: 2rem;
-}
-.card-container::-webkit-scrollbar {
-  display: none;
-}
-.card-container {
-  width: auto;
-  height: 10rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  overflow: scroll;
-  &__card {
-    background-color: $Midnight;
-    margin-right: 1rem;
-    height: 7rem;
-    min-width: 6.5rem;
-    padding: .75rem;
-    border-radius: 1rem;
+  &__wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  &__wrapper {
+    width: auto;
+    height: 10rem;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    overflow: scroll;
   }
-  &__to-symbol, &__price {
-    color: $Grey;
-  }
-  &__price-change {
-    color: $Green;
-  }
-  &__img {
-    width: 1.75rem;
-  }
-  &__chart {
+}
+.coin-card {
+  background-color: $Midnight;
+  margin-right: 1rem;
+  height: 7rem;
+  min-width: 6.5rem;
+  padding: .75rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__chart-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -109,11 +93,17 @@ export default {
       margin-right: 1rem;
     }
   }
-  .up {
-    color: $Green;
+  &__img {
+    width: 1.75rem;
   }
-  .down {
-    color: $DangerRed;
+  &__to-symbol, &__price {
+    color: $Grey;
   }
+}
+.up {
+  color: $Green;
+}
+.down {
+  color: $DangerRed;
 }
 </style>
